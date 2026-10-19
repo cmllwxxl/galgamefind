@@ -1,0 +1,138 @@
+/* Galgame 科普站 - 全局样式 */
+:root {
+  --primary: #e8608a;
+  --primary-dark: #c94570;
+  --accent: #7c6cf0;
+  --bg: #fff8fa;
+  --card: #ffffff;
+  --text: #33323e;
+  --muted: #77727f;
+  --border: #f3dfe7;
+  --radius: 14px;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.9;
+  font-size: 16px;
+}
+a { color: var(--primary); text-decoration: none; }
+a:hover { color: var(--primary-dark); text-decoration: underline; }
+
+/* 导航 */
+header.site-header {
+  background: linear-gradient(135deg, #ff8fab 0%, #e8608a 60%, #7c6cf0 100%);
+  padding: 14px 0;
+  position: sticky; top: 0; z-index: 100;
+  box-shadow: 0 2px 12px rgba(232, 96, 138, .25);
+}
+.nav-wrap {
+  max-width: 1060px; margin: 0 auto; padding: 0 20px;
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;
+}
+.logo { color: #fff; font-size: 20px; font-weight: 700; letter-spacing: 1px; }
+.logo:hover { color: #fff; text-decoration: none; opacity: .9; }
+nav.main-nav a {
+  color: rgba(255,255,255,.92); margin-left: 22px; font-size: 15px;
+}
+nav.main-nav a:hover, nav.main-nav a.active { color: #fff; text-decoration: none; border-bottom: 2px solid #fff; padding-bottom: 3px; }
+
+/* 主体 */
+.container { max-width: 1060px; margin: 0 auto; padding: 36px 20px 60px; }
+.hero {
+  background: linear-gradient(135deg, #fff0f5, #f4f0ff);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 46px 40px; margin-bottom: 36px; text-align: center;
+}
+.hero h1 { font-size: 32px; color: var(--primary-dark); margin-bottom: 14px; }
+.hero p { color: var(--muted); max-width: 720px; margin: 0 auto; }
+
+/* 首页下载按钮 */
+.cta-btn {
+  display: inline-block; margin-top: 26px;
+  padding: 16px 46px; font-size: 19px; font-weight: 700; letter-spacing: 1px;
+  color: #fff; text-decoration: none;
+  background: linear-gradient(135deg, #e8608a 0%, #7c6cf0 100%);
+  border-radius: 999px;
+  box-shadow: 0 6px 20px rgba(232, 96, 138, .45);
+  transition: transform .2s, box-shadow .2s;
+}
+.cta-btn:hover {
+  color: #fff; text-decoration: none;
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 10px 28px rgba(124, 108, 240, .5);
+}
+
+article h1 { font-size: 30px; color: var(--primary-dark); margin-bottom: 8px; }
+article h2 {
+  font-size: 22px; color: var(--primary-dark);
+  margin: 38px 0 14px; padding-left: 12px; border-left: 4px solid var(--primary);
+}
+article h3 { font-size: 18px; margin: 24px 0 10px; color: var(--accent); }
+article p { margin-bottom: 14px; }
+.meta { color: var(--muted); font-size: 14px; margin-bottom: 26px; }
+
+.card-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px; margin: 26px 0;
+}
+.card {
+  background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 24px; transition: transform .2s, box-shadow .2s;
+}
+.card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(232,96,138,.15); text-decoration: none; }
+.card h3 { margin-top: 0; }
+.card p { color: var(--muted); font-size: 15px; margin-bottom: 0; }
+
+table.compare {
+  width: 100%; border-collapse: collapse; margin: 18px 0 26px;
+  background: var(--card); border-radius: var(--radius); overflow: hidden;
+  box-shadow: 0 1px 6px rgba(0,0,0,.05);
+}
+table.compare th, table.compare td {
+  padding: 12px 16px; border: 1px solid var(--border); text-align: left; font-size: 15px;
+}
+table.compare th { background: #ffe9f0; color: var(--primary-dark); }
+
+.timeline { border-left: 3px solid var(--primary); margin: 20px 0 30px 8px; padding-left: 22px; }
+.timeline .t-item { margin-bottom: 22px; position: relative; }
+.timeline .t-item::before {
+  content: ""; position: absolute; left: -31px; top: 8px;
+  width: 13px; height: 13px; border-radius: 50%;
+  background: var(--primary); border: 3px solid #ffd6e3;
+}
+.timeline .t-year { font-weight: 700; color: var(--primary-dark); }
+
+.callout {
+  background: #f4f0ff; border: 1px solid #ddd4fb; border-radius: var(--radius);
+  padding: 16px 20px; margin: 18px 0; font-size: 15px;
+}
+.toc {
+  background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 18px 24px; margin: 22px 0 30px;
+}
+.toc strong { color: var(--primary-dark); }
+.toc ul { margin: 8px 0 0 20px; }
+ul.dot { margin: 6px 0 16px 22px; }
+ul.dot li { margin-bottom: 6px; }
+
+.crumb { font-size: 14px; color: var(--muted); margin-bottom: 18px; }
+.faq-item { margin-bottom: 20px; }
+.faq-item h3 { margin-bottom: 6px; }
+
+/* 页脚 */
+footer.site-footer {
+  background: #3a2f3d; color: #cbbfd0; text-align: center;
+  padding: 28px 20px; font-size: 14px; margin-top: 40px;
+}
+footer.site-footer a { color: #ffb3c9; }
+
+@media (max-width: 640px) {
+  .hero { padding: 30px 22px; }
+  .hero h1 { font-size: 24px; }
+  article h1 { font-size: 24px; }
+  nav.main-nav a { margin-left: 14px; font-size: 14px; }
+}
